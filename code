@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function generateCaptcha(){
+                var cap = new Array('#','!','@','$','%','^','&','*',"((",")",'A','B','C','D','F','G','H','I','J','K','L','M','N','O','P','Q','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
+                var i;
+                for(i=0;i<6;i++){
+                    var a= cap[Math.floor(Math.random()*cap.length)];
+                    var b= cap[Math.floor(Math.random()*cap.length)];
+                    var c= cap[Math.floor(Math.random()*cap.length)];
+                    var d= cap[Math.floor(Math.random()*cap.length)];
+                    var e= cap[Math.floor(Math.random()*cap.length)];
+                    var f= cap[Math.floor(Math.random()*cap.length)];
+                
+
+                }
+                var code = a+b+d+e+f;
+                document.getElementById("mainCaptcha").value = code
+            }
+            function checkValidCaptcha( ){
+                var string1= removeSpaces(document.getElementById('mainCaptcha').value);
+                var string2= removeSpaces(document.getElementById('Inputtext').value);
+                if(string1==string2){
+                    document.getElementById('Valid').innerHTML = "Form is validated succesfully";
+                    alert("thanks for confirmation");
+                    window.location = "https://youtu.be/64N1nNk0WuQ?si=zZw-jxxtBE1wovSJ";
+                    return true;
+                }
+                else{
+                    document.getElementById('error').innerHTML = "Form is invalidated ";
+                   
+                    return false;
+                }    }
+                function removeSpaces(){
+                return string.split('').join('');
+            
+
+            }
+            
+        </script>
+    </head>
+    <body onload="generateCaptcha();">
+        <centre>
+        <h1>Validate your existence </h1>
+        <table>
+            <tr>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="mainCaptcha" readonly="readonly"  />
+                    <input type="button" id="refresh" value="refresh" onclick="generateCaptcha();"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="Inputtext"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <span id="error" style="color:red"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span id="Valid" style="color:rgb(7, 197, 7)"></span>
+                </td>
+                <tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                <td>
+                    <input type="button" id="checkbutton" value="Check" onclick="checkValidCaptcha();"/> 
+                </td>
+            </tr>
+            </tr>
+        </table>
+        </centre>
+
+    </body>
+</html>
